@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "463707467156",
+    "firebase_url": "https://veno-clan.firebaseio.com",
+    "project_id": "veno-clan",
+    "storage_bucket": "veno-clan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463707467156:android:a3d6e812bbabbf0d",
+        "android_client_info": {
+          "package_name": "com.veno_clan.firebaseapp.veno"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "463707467156-uctmt3i8v7sp7lgh32l2ju2a1ut4onbb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.veno_clan.firebaseapp.veno",
+            "certificate_hash": "557775e84774f74a3dfc03a678f1217dca585195"
+          }
+        },
+        {
+          "client_id": "463707467156-cu5jsghvanku8k7i49k0e0l9v58tfuiv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWnl3neiuvfgsyWGLmN9PxElZHRgX6Gng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "463707467156-cu5jsghvanku8k7i49k0e0l9v58tfuiv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
