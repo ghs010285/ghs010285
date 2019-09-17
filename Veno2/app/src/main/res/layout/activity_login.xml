@@ -33,7 +33,7 @@
         android:layout_alignParentBottom="true"
         android:gravity="bottom"
         android:orientation="vertical">
-\
+        \
         <!-- EditText - Email -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -63,6 +63,16 @@
                 android:hint="@string/password"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="개인정보 및 서비스 이벤트알림에 동의합니다."
+            android:textSize="12dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"/>
+
         <Button
             android:id="@+id/email_login_button"
             android:layout_width="match_parent"
@@ -75,33 +85,17 @@
             android:theme="@style/ButtonStyle" />
 
         <Button
-            android:id="@+id/google_sign_in_button"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:textColor="@color/colorWhite" />
-
-
-        <Button
-            android:id="@+id/facebook_login_button"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="5dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:textColor="@color/colorWhite" />
-
-        <Button
-            android:id="@+id/twitter_login_button"
+            android:textColor="@color/blue"
+            android:background="@color/background_color"
+            android:id="@+id/gin_junbo_01"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginBottom="35dp"
             android:layout_marginEnd="20dp"
             android:layout_marginStart="20dp"
-            android:textColor="@color/colorWhite" />
+            android:layout_marginTop="15dp"
+            android:text="@string/gin_junbo"
+            android:theme="@style/ButtonStyle" />
 
 
     </LinearLayout>

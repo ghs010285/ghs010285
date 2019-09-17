@@ -1,7 +1,9 @@
 package com.veno_clan.firebaseapp.veno
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -20,27 +22,29 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.iid.FirebaseInstanceId
 import com.google.firebase.provider.FirebaseInitProvider
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
 import com.google.firebase.storage.FirebaseStorage
 import com.veno_clan.firebaseapp.veno.navigation.*
 
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
     val PICK_PROFILE_FROM_ALBUM = 10
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         progress_bar.visibility = View.VISIBLE
-
-        // Bottom Navigation View
         bottom_navigation.setOnNavigationItemSelectedListener(this)
         bottom_navigation.selectedItemId = R.id.action_home
-
-        // 앨범 접근 권한 요청
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 1)
-        //푸시토큰 서버 등록
         registerPushToken()
     }
+
+
+
 
     fun registerPushToken(){
         var pushToken = FirebaseInstanceId.getInstance().token
@@ -106,6 +110,10 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         return false
     }
 
+
+
+
+    @SuppressLint("MissingSuperCall")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
         // 앨범에서 Profile Image 사진 선택시 호출 되는 부분분

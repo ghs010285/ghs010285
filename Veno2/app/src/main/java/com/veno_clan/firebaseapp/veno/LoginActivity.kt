@@ -23,9 +23,9 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         email_login_button.setOnClickListener { emailLogin() }
-        google_sign_in_button.setOnClickListener { google_btn() }
-        facebook_login_button.setOnClickListener { facebook_btn() }
-        twitter_login_button.setOnClickListener { twitter_btn() }
+        //google_sign_in_button.setOnClickListener { google_btn() }
+        //facebook_login_button.setOnClickListener { facebook_btn() }
+        //twitter_login_button.setOnClickListener { twitter_btn() }
     }
     fun moveMainPage(user : FirebaseUser?){
         if(user != null){
@@ -49,15 +49,15 @@ class LoginActivity : AppCompatActivity() {
     fun createAndLoginEmail(){
         auth?.createUserWithEmailAndPassword(email_edittext.text.toString(), password_edittext.text.toString())
             ?.addOnCompleteListener { task -> progress_bar.visibility  = View.GONE
-            if(task.isSuccessful) {
-                Toast.makeText(this, getString(R.string.signup_complate),Toast.LENGTH_SHORT).show()
-                moveMainPage(auth?.currentUser)
-            } else if (task.exception?.message.isNullOrEmpty()) {
-                Toast.makeText(this, task.exception!!.message, Toast.LENGTH_SHORT).show()
-            } else{
-                signinEmail()
+                if(task.isSuccessful) {
+                    Toast.makeText(this, getString(R.string.signup_complate),Toast.LENGTH_SHORT).show()
+                    moveMainPage(auth?.currentUser)
+                } else if (task.exception?.message.isNullOrEmpty()) {
+                    Toast.makeText(this, task.exception!!.message, Toast.LENGTH_SHORT).show()
+                } else{
+                    signinEmail()
+                }
             }
-          }
     }
 
     fun emailLogin(){
@@ -72,11 +72,11 @@ class LoginActivity : AppCompatActivity() {
     fun signinEmail(){
         auth?.signInWithEmailAndPassword(email_edittext.text.toString(), password_edittext.text.toString())
             ?.addOnCompleteListener { task -> progress_bar.visibility = View.GONE
-            if(task.isSuccessful){
-                moveMainPage(auth?.currentUser)
-            }else{
-                Toast.makeText(this, task.exception!!.message, Toast.LENGTH_SHORT).show()
-            }}
+                if(task.isSuccessful){
+                    moveMainPage(auth?.currentUser)
+                }else{
+                    Toast.makeText(this, task.exception!!.message, Toast.LENGTH_SHORT).show()
+                }}
     }
 
     override fun onStart() {

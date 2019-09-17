@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- START xml_defaults -->
+<defaultsMap>
+    <entry>
+        <key>loading_phrase</key>
+        <value>Fetching config…</value>
+    </entry>
+    <entry>
+        <key>is_Update</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>app_text</key>
+        <value>업데이트를 확인 할 수 없습니다.</value>
+    </entry>
+</defaultsMap>
+    <!-- END xml_defaults -->

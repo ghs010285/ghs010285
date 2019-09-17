@@ -4,13 +4,19 @@
 
     <string name="email">이메일</string>
     <string name="password">비밀번호</string>
-    <string name="signin_email">회원가입 및 로그인</string>
+    <string name="signin_email">로그인</string>
     <string name="signin_complate">로그인 성공</string>
     <string name="signup_complate">회원가입 성공</string>
+    <string name="find_account">계정 찾기</string>
+    <string name="signup_email">회원가입</string>
     <string name="sign_out">로그아웃</string>
     <string name="sign_out_complate">로그아웃 성공</string>
     <string name="sign_out_fail">로그아웃 실패</string>
     <string name="sign_out_fail_null">이메일과 비밀번호를 입력해 주세요</string>
+    <string name="error_event">존재하지 않는 이벤트입니다. 개발자에게 문의 해 주세요</string>
+    <string name="gin_junbo">개인정보 약관 및 서비스, 이벤트성 약관 보기</string>
+    <string name="nikname">닉네임</string>
+
 
     <string name="home">홈</string>
     <string name="search">검색</string>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JungboActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="개인정보 및 서비스, 이벤트 약관"
+            android:textSize="26dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="(1)회원 이메일 수집\n 베노앱은 로그인 및 회원가입, 비밀번호 재설정을 위해 이메일을 수집합니다."
+            android:textSize="15dp"/>
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="(2)회원 닉네임 수집\n 베노앱은 회원들을 구별하기 위해 닉네임을 수집합니다."
+            android:textSize="15dp"/>
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="(3)회원들의 신원 조회 \n 베노앱은 회원들의 이메일을 수집하여 보다 좋은 앱을 관리하기위해 조회합니다."
+            android:textSize="15dp"/>
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="(4)서비스 이용\n 베노앱에서 회원가입시 서비스 이용에 자동으로 약관 동의하게 됩니다."
+            android:textSize="15dp"/>
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="(5)이벤트 알림 야관\n 이벤트 및 행사와 관련하여 알림을 보냅니다. "
+            android:textSize="15dp"/>
+        <!--서비스 이용 기간은 회원가입시 부터 회원탈퇴까지이며 회원탈퇴시 모든 정보가 즉시 파기됩니다.-->
+
+    </LinearLayout>
+    </ScrollView>
+
+
+
+
+</LinearLayout>

@@ -1,6 +1,5 @@
 package com.veno_clan.firebaseapp.veno.util
 
-import com.google.common.net.MediaType
 import com.veno_clan.firebaseapp.veno.model.PushDTO
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.gson.Gson
@@ -47,9 +46,5 @@ class FcmPush() {
                 })
             }
         }
-    }
-
-    private fun create1(json: MediaType?, toJson: String?): RequestBody? {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

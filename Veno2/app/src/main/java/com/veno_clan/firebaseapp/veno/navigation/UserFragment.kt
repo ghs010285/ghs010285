@@ -25,9 +25,11 @@ import com.veno_clan.firebaseapp.veno.model.ContentDTO
 import com.veno_clan.firebaseapp.veno.model.FollowDTO
 import com.veno_clan.firebaseapp.veno.util.FcmPush
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_sign_up.*
 import kotlinx.android.synthetic.main.fragment_user.*
 import kotlinx.android.synthetic.main.fragment_user.view.*
 import java.util.ArrayList
@@ -63,7 +65,6 @@ class UserFragment : Fragment() {
 
             // 본인 계정인 경우 -> 로그아웃, Toolbar 기본으로 설정
             if (uid != null && uid == currentUserUid) {
-
                 fragmentView!!.account_btn_follow_signout.text = getString(R.string.sign_out)
                 fragmentView?.account_btn_follow_signout?.setOnClickListener {
                     startActivity(Intent(activity, LoginActivity::class.java))
@@ -234,7 +235,7 @@ class UserFragment : Fragment() {
 
         val alarmDTO = AlarmDTO()
         alarmDTO.destinationUid = destinationUid
-        alarmDTO.userId = auth?.currentUser!!.email
+        alarmDTO.userId = nikname_edittext.toString()
         alarmDTO.uid = auth?.currentUser!!.uid
         alarmDTO.kind = 2
         alarmDTO.timestamp = System.currentTimeMillis()
