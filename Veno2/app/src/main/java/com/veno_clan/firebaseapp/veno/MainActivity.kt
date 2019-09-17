@@ -4,11 +4,15 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
+import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.text.TextUtils
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
@@ -28,6 +32,8 @@ import com.google.firebase.storage.FirebaseStorage
 import com.veno_clan.firebaseapp.veno.navigation.*
 
 
+
+
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
     val PICK_PROFILE_FROM_ALBUM = 10
 
@@ -40,10 +46,55 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         bottom_navigation.setOnNavigationItemSelectedListener(this)
         bottom_navigation.selectedItemId = R.id.action_home
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 1)
+
         registerPushToken()
+        checkVersion()
+    }
+
+    private fun checkVersion(){
+        val remoteConfig = FirebaseRemoteConfig.getInstance()
+        val lastVersion = remoteConfig.getString("update_version")
+        val currentVersion = getAppVersion(this)
+
+        if(!TextUtils.equals(currentVersion, lastVersion)){
+            showUpdate()
+        }
+    }
+
+    private fun getAppVersion(context: Context): String{
+        var result = ""
+        try {
+            result = context.packageManager
+                .getPackageInfo(context.packageName, 0)
+                .versionName
+            result = result.replace("[a-zA-Z]|-".toRegex(), "")
+        } catch (e: PackageManager.NameNotFoundException){
+
+        }
+        return result
     }
 
 
+
+    private fun showUpdate(){
+        val remoteConfig = FirebaseRemoteConfig.getInstance()
+//
+        val dialog = AlertDialog.Builder(this)
+            .setCancelable(false)
+            .setTitle("새로운 업데이트")
+            .setMessage("새로운 업데이트가 있습니다 쾌적한 앱 이용을 위해 업데이트를 해 주세요")
+            .setPositiveButton("OK" ) {dialog, whch -> moveStore()}
+            .create()
+        dialog.show()
+
+    }
+
+    private fun moveStore() {
+        val url = "https://naver.com"   //스토어 주소 입력하기
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        startActivity(intent)
+        finish()
+    }
 
 
     fun registerPushToken(){

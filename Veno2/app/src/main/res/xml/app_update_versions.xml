@@ -2,16 +2,20 @@
 <!-- START xml_defaults -->
 <defaultsMap>
     <entry>
-        <key>loading_phrase</key>
-        <value>Fetching config…</value>
+        <key>update_version</key>
+        <value>1.1</value>
     </entry>
     <entry>
         <key>is_Update</key>
-        <value>true</value>
+        <value>false</value>
     </entry>
     <entry>
         <key>app_text</key>
         <value>업데이트를 확인 할 수 없습니다.</value>
+    </entry>
+    <entry>
+        <key>update_url</key>
+        <value>http://naver.com</value>
     </entry>
 </defaultsMap>
     <!-- END xml_defaults -->
